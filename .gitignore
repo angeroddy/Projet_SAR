@@ -1,0 +1,13 @@
+# Workspace Eclipse
+.metadata/
+
+# Config Eclipse spécifique aux projets
+.settings/
+.recommenders/
+
+# Binaires compilés
+bin/
+
+# On garde la config des projets
+!.project
+!.classpath
