@@ -2,12 +2,12 @@ package tests;
 
 import abstracts.Broker;
 import abstracts.Channel;
-import implementation.SimpleBroker;
+import implementation.LocalBroker;
 
 class ServerTask implements Runnable {
     @Override
     public void run() {
-        Broker broker = new SimpleBroker("Server");
+        Broker broker = new LocalBroker("Server");
         Channel channel = broker.accept(8080);
 
         // Lire un message
@@ -28,7 +28,7 @@ class ServerTask implements Runnable {
 class ClientTask implements Runnable {
     @Override
     public void run() {
-        Broker broker = new SimpleBroker("Client");
+        Broker broker = new LocalBroker("Client");
         Channel channel = broker.connect("Server", 8080);
 
 
